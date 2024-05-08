@@ -1,4 +1,4 @@
-package com.example.demo.services
+package com.example.demo.controllers.models
 
 data class CreateUserOutput(
     val id: String,

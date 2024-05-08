@@ -1,5 +1,6 @@
 package com.example.demo.controllers
 
+import com.example.demo.controllers.models.CreateUserInput
 import com.example.demo.services.CustomService
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
@@ -15,7 +16,7 @@ class Controller(private val service: CustomService) {
 
     @PostMapping("/rest/users")
     fun createUser(
-        @RequestBody userCreation: UserInput
+        @RequestBody userCreation: CreateUserInput
     ): ResponseEntity<*> {
         val user = service.createUser(userCreation)
         return ResponseEntity.status(201).body(user)
